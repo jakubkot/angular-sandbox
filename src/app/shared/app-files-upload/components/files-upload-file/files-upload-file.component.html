@@ -1,0 +1,29 @@
+<div class="p-fileupload-row">
+    file
+    <div>
+        <!-- <img
+            *ngIf="isImage(file)"
+            [src]="$any(file).objectURL"
+            [width]="previewWidth"
+        /> -->
+        <img
+            [src]="$any(file).objectURL"
+            width="100px"
+        />
+    </div>
+    <div
+        class="p-fileupload-filename">
+        {{ file.name }}
+    </div>
+    <div>
+        <!-- {{ formatSize(file.size) }} -->
+    </div>
+    <div>
+        <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            (click)="handleOnRemove()">
+        </button>
+    </div>
+</div>

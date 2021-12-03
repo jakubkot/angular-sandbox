@@ -1,0 +1,14 @@
+<p-fileUpload
+  *ngIf="(files$ | async) as files"
+  (onSelect)="handleOnSelect($event)"
+  [multiple]="true"
+  [maxFileSize]="100000">
+  <ng-template
+    pTemplate="content">
+    <app-files-upload-content
+      *ngIf="(files$ | async) as files"
+      [files]="files"
+      (onRemoveFileData)="handleOnRemoveFileData($event)">
+    </app-files-upload-content>
+  </ng-template>
+</p-fileUpload>

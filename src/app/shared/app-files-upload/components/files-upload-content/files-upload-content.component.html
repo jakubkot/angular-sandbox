@@ -1,0 +1,16 @@
+<ng-container
+  *ngFor="let file of files; let index = index"
+  [ngSwitch]="file | fileType">
+  <app-files-upload-file
+    *ngSwitchCase="'File'"
+    [file]="$any(file)"
+    [index]="index">
+  </app-files-upload-file>
+  <app-files-upload-file-data
+    *ngSwitchCase="'FileDataViewModel'"
+    [file]="$any(file)"
+    [index]="index"
+    (onRemove)="handleOnRemoveFileData($event)">
+  </app-files-upload-file-data>
+</ng-container>
+

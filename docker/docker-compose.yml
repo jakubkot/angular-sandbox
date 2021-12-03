@@ -1,0 +1,22 @@
+version: '3'
+services:
+  angular:
+    container_name: jk_sandbox_angular
+    build: angular
+    tty: true
+    environment:
+      TZ: ${TIMEZONE}
+      VIRTUAL_HOST: ${HOST}
+      NODE_OPTIONS: ${NODE_OPTIONS}
+    ports:
+      - ${ANGULAR_PORT}:4200
+    volumes:
+      - ../:/app:cached
+      - ../node_modules:/app/node_modules:delegated
+    networks:
+      - application
+
+networks:
+  application:
+    external:
+      name: jk_sandbox

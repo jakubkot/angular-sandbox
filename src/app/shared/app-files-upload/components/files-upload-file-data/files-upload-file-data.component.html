@@ -1,0 +1,28 @@
+<div class="p-fileupload-row">
+    filedata
+    <div>
+        <!-- <img
+            [attr.src]="fileData.thumbnail || null"
+            [width]="previewWidth"
+        /> -->
+        <img
+            [attr.src]="file.thumbnail || null"
+            width="100px"
+        />
+    </div>
+    <div
+        class="p-fileupload-filename">
+        {{ file.name }}
+    </div>
+    <div>
+        <!-- {{ formatSize(fileData.size) }} -->
+    </div>
+    <div>
+        <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            (click)="handleOnRemove()">
+        </button>
+    </div>
+</div>
