@@ -16,6 +16,9 @@
       "@layout/*": [
         "app/layout/*"
       ],
+      "@pages/*": [
+        "app/pages/*"
+      ],
       "@shared/*": [
         "app/shared/*"
       ],
